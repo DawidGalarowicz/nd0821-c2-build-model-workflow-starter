@@ -6,28 +6,28 @@ entry_points:
     parameters:
 
       input_artifact:
-        description: ## ADD DESCRIPTION
+        description: 'Path to the CSV file that this component of the pipeline will clean'
         type: string
 
       output_artifact:
-        description: ## ADD DESCRIPTION
+        description: 'Path to the CSV file that we obtain as the result'
         type: string
 
       output_type:
-        description: ## ADD DESCRIPTION
+        description: 'Output type to be logged in W&B'
         type: string
 
       output_description:
-        description: ## ADD DESCRIPTION
+        description: 'Description of the output to be uploaded to W&B'
         type: string
 
       min_price:
-        description: ## ADD DESCRIPTION
-        type: string
+        description: 'Minimum valid price - properties below that value will be discarded'
+        type: float
 
       max_price:
-        description: ## ADD DESCRIPTION
-        type: string
+        description: 'Maximum valid price - properties above that value will be discarded'
+        type: float
 
 
     command: >-
