@@ -29,6 +29,10 @@ def go(args):
     logger.info('Converting data types')
     df['last_review'] = pd.to_datetime(df['last_review'])
 
+    logger.info('Removing locations that are outside of the boundaries')
+    idx = df['longitude'].between(-74.25, -73.50) & df['latitude'].between(40.5, 41.2)
+    df = df[idx].copy()
+
     logger.info(f'Saving outputs to {args.output_artifact} and sending them to W&B')
     df.to_csv(args.output_artifact, index=False)
 
